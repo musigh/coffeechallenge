@@ -2,7 +2,7 @@
 
 namespace Coffee;
 
-/**
+/**	⠀
  * Accepted response to the coffee challenge.
  */
 class OttoCoffee extends VendingMachine{
@@ -16,7 +16,6 @@ class OttoCoffee extends VendingMachine{
 
 	public function order($coffeeID, $cupID, $loyalty)
 	{
-		
 		$cupSize = $this->db->query("SELECT size FROM cups WHERE id = " . $cupID)->fetch()[0];
 		
 		if(!$this->enoughCoffee($coffeeID, $cupSize)){
@@ -52,3 +51,5 @@ class OttoCoffee extends VendingMachine{
 		$this->db->query("UPDATE coffee SET amount_left = {$cupSize} WHERE id = " . $order['coffee_id']);	
 	}
 }
+
+?>
